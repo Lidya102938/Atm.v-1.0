@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width" />
+	<title>ATM - Pilih Nominal</title>
+	<link href="/dist/output.css" rel="stylesheet" />
+</head>
+
+<body class="bg-[#324154] px-28 py-10 h-[100vh] flex items-center">
+	<div class="container bg-[#597298] rounded-lg flex">
+		<div class="p-10">
+			<h1 class="text-white text-[32pt] font-bold text-center">Silahkan Pilih Paket Nominal</h1>
+			<div class="flex justify-center mt-10">
+				<div class=" text-white text-4xl text-start space-y-8">
+					<h1 onclick="hitungNilai(nominal.seratus)"> <- 100.000 </h1>
+					<h1 onclick="hitungNilai(nominal.duaratus)"> <- 200.000 </h1>
+					<h1 onclick="hitungNilai(nominal.tigaratus)"> <- 300.000 </h1>
+					<!-- <h1 onclick="hitungNilai(this.id)" id="Nominal"> <- nominal lainnya </h1> -->
+					<h1 href="nominalLain.html" class="w-28 align-center"> <a href="nominalLain.html"><- Nominal lain</a></h1>
+				</div>
+				<div class="text-white text-4xl text-end space-y-8 space-x-14">
+					<h1 onclick="hitungNilai(nominal.limaratus)"> 500.000 -> </h1>
+					<h1 onclick="hitungNilai(nominal.sejuta)"> 1.000.000 -> </h1>
+					<h1 onclick="hitungNilai(nominal.sejutalimaratus)"> 1.500.000 -> </h1>
+					<h1  class="w-28 text-center pl-4"> Transaksi -> Lain </h1>
+				</div>
+			</div>
+		</div>
+		<a href="/src/pages/pilihBahasa.html">
+			<img class="rounded-lg" src="../images/ambil-uang.jpg" />
+		</a>
+	</div>
+
+	<script>
+		const nominal={
+			seratus:"100000",
+			duaratus:'200000',
+			tigaratus:"300000",
+			limaratus:"500000",
+			sejuta:"1000000",
+			sejutalimaratus:"1500000"
+		}
+		let nominalawal = "5000000"
+
+		// function hitungNilai(value){
+		// 	if(value == 'Nominal'){
+		// 		const nominal = prompt('masukan nominal')
+		// 		if(nominal % 50000 == 0){
+		// 			alert(nominalawal - nominal);
+		// 			location.href="ambilKartu.html"	
+		// 		}else{
+		// 			alert('masukan nominal dengan benar')
+		// 		}
+		// 	}else{
+		// 		let hasil= confirm(`Sisa Saldo Anda ${nominalawal-value}`)
+		// 		if(hasil==true){
+		// 			location.href="ambilKartu.html"	
+		// 		}
+		// 	}
+		// }
+
+		function hitungNilai(value){
+				let hasil= confirm(`Sisa Saldo Anda ${nominalawal-value}`)
+				if(hasil==true){
+					location.href="ambilKartu.html"	
+				}
+		}
+	</script>
+</body>
+
+</html>
